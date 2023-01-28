@@ -73,9 +73,7 @@ public class VirtualPetApplication {
                 System.out.println("4) Bed Time For " + myVirtualPet.petName);
                 System.out.println("5) To Exit");
 
-            }
-
-            else if (userChoice.equals("3")) {
+            } else if (userChoice.equals("3")) {
                 System.out.println("Play with  " + myVirtualPet.petName);
 
                 myVirtualPet.feedPet(10);
@@ -95,10 +93,7 @@ public class VirtualPetApplication {
                 System.out.println("3) To Play With " + myVirtualPet.petName);
                 System.out.println("4) Bed Time For " + myVirtualPet.petName);
                 System.out.println("5) To Exit");
-            }
-
-
-            else if (userChoice.equals("4")) {
+            } else if (userChoice.equals("4")) {
                 System.out.println("BedTime For  " + myVirtualPet.petName);
 
                 myVirtualPet.feedPet(0);
@@ -117,12 +112,18 @@ public class VirtualPetApplication {
                 System.out.println("2) To Give Water To " + myVirtualPet.petName);
                 System.out.println("3) To Play With " + myVirtualPet.petName);
                 System.out.println("4) Bed Time For " + myVirtualPet.petName);
-                System.out.println("5) To Exit");
+                System.out.println("5) To Exit ");
+
+
             }
-            else {
+
+           else {
                 System.out.println("Error! Select 1-5");
             }
             userChoice = input.nextLine();
         }
+        myVirtualPet.tick();
     }
+
 }
+

@@ -48,6 +48,14 @@ public class VirtualPet {
 
     }
 
+    public void tick() {
+        this.hunger += 5;
+        this.tiredness += 5;
+        this.thirst += 5;
+        this.boredom +=5;
+
+    }
+
     public void petDisplay(){
 
     }
