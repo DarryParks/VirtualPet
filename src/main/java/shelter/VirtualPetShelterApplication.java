@@ -7,23 +7,25 @@ public class VirtualPetShelterApplication {
         Scanner input = new Scanner(System.in);
 
         VirtualPetShelter myPet = new VirtualPetShelter();
-//        shelter.VirtualPet pet1 = new shelter.VirtualPet("Oscar", "Dog-Big", 50, 50, 50, 50);
-//        shelter.VirtualPet pet2 = new shelter.VirtualPet("Phoebe", "Dog-Small", 75, 70, 100, 25);
-//        shelter.VirtualPet pet3 = new shelter.VirtualPet("Sam", "Cat-Big", 30, 100, 45, 20);
-//        shelter.VirtualPet pet4 = new shelter.VirtualPet("Kitten", "Cat-Small", 50, 60, 30, 70);
-//
-//        myPet.addPet(pet1);
-//        myPet.addPet(pet2);
-//        myPet.addPet(pet3);
-//        myPet.addPet(pet4);
+        shelter.VirtualPet pet1 = new shelter.VirtualPet("Oscar", "Dog-Big", 50, 50, 50, 50);
+        shelter.VirtualPet pet2 = new shelter.VirtualPet("Phoebe", "Dog-Small", 75, 70, 100, 25);
+        shelter.VirtualPet pet3 = new shelter.VirtualPet("Sam", "Cat-Big", 30, 100, 45, 20);
+        shelter.VirtualPet pet4 = new shelter.VirtualPet("Kitten", "Cat-Small", 50, 60, 30, 70);
+
+        myPet.addPet(pet1);
+        myPet.addPet(pet2);
+        myPet.addPet(pet3);
+        myPet.addPet(pet4);
 
         String userChoice;
         boolean run = true;
 
 
             System.out.println("WELCOME TO VIRTUAL PET!");
-            System.out.println("These are the pets in the Shelter");
+            System.out.println("These are the pets in the Playful Pet Adoption PlaceShelter");
             System.out.println();
+
+            myPet.showPets();
 
           while (run) {
 
@@ -61,15 +63,32 @@ public class VirtualPetShelterApplication {
               }
 
               if (userChoice.equals("5")) {
-                  System.out.println("Enter Pet name to remove");
+                  System.out.println("Enter pet name to add shelter");
+                  String name = input.nextLine();
+                  myPet.showPets();
+              }
+
+
+              if (userChoice.equals("6")) {
+                  System.out.println("Enter Pet name you would love to adopt? ");
                   String name = input.nextLine();
                   myPet.adopt(name);
+                  myPet.removePet();
+                  myPet.showPets();
+              }
+
+
+              if (userChoice.equals("7")) {
+                  System.out.println("Here all the pets in the shelter");
+                  String name = input.nextLine();
+                  myPet.getAllPets();
                   myPet.showPets();
               }
 
 
               if (userChoice.equals("8")) {
                   run = false;
+                  System.out.println("Thanks for coming to the Playful Pet Adoption PlaceShelter, Good Bye! ");
 
               }
           }

@@ -19,18 +19,18 @@ public class VirtualPetShelterTest {
 
     @BeforeEach
     public void setUp(){
-        underTest = new shelter.VirtualPetShelter();
-        pet1 = new shelter.VirtualPet("Oscar","Dog - Big",100,100,1000, 100);
-        pet2 = new shelter.VirtualPet("Phoebe","Dog - Small",75,75,75,75);
-        pet3 = new shelter.VirtualPet("Sam","Cat - Big", 50, 50,50,50);
-        pet4 = new shelter.VirtualPet("Kitten", "Cat - Small",25, 25,25,25);
+        underTest = new VirtualPetShelter();
+        pet1 = new VirtualPet("Oscar","Dog - Big",100,100,1000, 100);
+        pet2 = new VirtualPet("Phoebe","Dog - Small",75,75,75,75);
+        pet3 = new VirtualPet("Sam","Cat - Big", 50, 50,50,50);
+        pet4 = new VirtualPet("Kitten", "Cat - Small",25, 25,25,25);
 
     }
 
     @Test
     public void shouldFindPet(){
         underTest.addPet(pet1);
-        shelter.VirtualPet retrievedPet = underTest.findPet("Oscar");
+        VirtualPet retrievedPet = underTest.findPet("Oscar");
         assertEquals(retrievedPet, pet1);
 
     }
@@ -61,8 +61,8 @@ public class VirtualPetShelterTest {
     }
     @Test
     public void shouldBeAbleToAdoptOrRemovePet(){
-        underTest.adopt(pet1);
-        shelter.VirtualPet retrievePet = underTest.findPet("Oscar");
+        underTest.adopt();
+        shelter.VirtualPet retrievePet = underTest.findPet(" ");
         assertEquals(retrievePet,"");
     }
 

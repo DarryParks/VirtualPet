@@ -10,7 +10,7 @@ public class VirtualPetShelter {
     private Map<String, VirtualPet> pets = new HashMap<>();
 
     public void addPet(VirtualPet petToAdd){
-        this.pets.put(petToAdd.getPetName(), petToAdd);}
+        pets.put(petToAdd.getPetName(), petToAdd);}
 
     public VirtualPet findPet(String petName){
 
@@ -23,7 +23,7 @@ public class VirtualPetShelter {
         }
     }
 
-    public Collection<shelter.VirtualPet> pets() {
+    public Collection<VirtualPet> pets() {
 
         return pets.values();
     }
@@ -75,7 +75,7 @@ public class VirtualPetShelter {
     }
 
     public void showPets(){
-        for(shelter.VirtualPet pet: pets.values()){
+        for(VirtualPet pet: pets.values()){
             System.out.println(  "Name: " +  pet.getPetName() + " Description: " + pet.getDescription() + " Hunger: " + pet.getHunger() + " Thirst: " + pet.getThirst() + " Boredom: " + pet.getBoredom() + " Tiredness: " + pet.getTiredness());
            /*System.out.println(pet.getPetName() + " " + pet.getDescription() + " " + pet.getThirst());
            System.out.println(pet.getPetName() + " " + pet.getDescription() + " " + pet.getBoredom());
