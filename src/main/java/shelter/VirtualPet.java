@@ -30,6 +30,7 @@ public class VirtualPet {
     }
 
     public int getHunger() {
+
         return hunger;
     }
 
@@ -57,7 +58,6 @@ public class VirtualPet {
     }
 
 
-
     public void playWithPet(int playAmount) {
         boredom -= playAmount;
 
@@ -67,6 +67,7 @@ public class VirtualPet {
         thirst -= waterAmount;
 
     }
+
     public void restPet(int restAmount) {
         tiredness -= restAmount;
     }
@@ -78,6 +79,13 @@ public class VirtualPet {
         System.out.println("Thirst: " + getThirst());
         System.out.println("Boredom: " + getBoredom());
         System.out.println("Tiredness: " + getTiredness());
+    }
+
+    public void tick() {
+        this.hunger += 5;
+        this.tiredness += 5;
+        this.thirst += 5;
+        this.boredom += 5;
     }
 }
 

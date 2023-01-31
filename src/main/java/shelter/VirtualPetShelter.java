@@ -3,58 +3,63 @@ package shelter;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class VirtualPetShelter {
 
-    Map<String, shelter.VirtualPet> pets = new HashMap<>();
+    private Map<String, VirtualPet> pets = new HashMap<>();
 
-    public void addPet(shelter.VirtualPet petToAdd){ pets.put(petToAdd.getPetName(), petToAdd);}
+    public void addPet(VirtualPet petToAdd){
+        this.pets.put(petToAdd.getPetName(), petToAdd);}
 
-    public shelter.VirtualPet findPet(String petName){
+    public VirtualPet findPet(String petName){
 
-        return pets.get(petName);
+        return this.pets.get(petName);
     }
 
-    public Collection<shelter.VirtualPet> getAllPets() {
-        return pets.values();
+    public void getAllPets() {
+        for (Entry<String, VirtualPet> showPet : pets.entrySet()) {
+            System.out.println(showPet.getValue().getPetName() + " " + showPet.getValue().petName);
+        }
     }
 
     public Collection<shelter.VirtualPet> pets() {
+
         return pets.values();
     }
 
-    public void adopt(shelter.VirtualPet petName){
-        pets.remove(petName);
+    public void adopt(String petName){
+
+        this.pets.remove(petName);
     }
 
     public void feedAllPets(){
-        for(shelter.VirtualPet pet: pets.values()){
-            pet.feedPet(10,5,3,6);
+        for (Entry<String, VirtualPet> showPet : pets.entrySet()) {
+            System.out.println(showPet.getValue().getHunger() + " " + showPet.getValue().petName);
         }
     }
 
     public void waterAllPets(){
-        for(shelter.VirtualPet pet: pets.values()){
-            pet.waterPet(10);
+        for (Entry<String, VirtualPet> showPet : pets.entrySet()) {
+            System.out.println(showPet.getValue().getThirst() + " " + showPet.getValue().petName);
         }
     }
 
     public void playWithAllPets(){
-        for(shelter.VirtualPet pet: pets.values()){
-            pet.playWithPet(10);
+        for (Entry<String, VirtualPet> showPet : pets.entrySet()) {
+            System.out.println(showPet.getValue().getTiredness() + " " + showPet.getValue().petName);
         }
     }
 
     public void restAllPets(){
-        for(shelter.VirtualPet pet: pets.values()){
-            pet.restPet(10);
+        for (Entry<String, VirtualPet> showPet : pets.entrySet()) {
+            System.out.println(showPet.getValue().getTiredness() + " " + showPet.getValue().petName);
         }
     }
 
 
 
-    public void waterPets(String petName, int waterAmount){
-        shelter.VirtualPet reduceThirstFromPet = findPet(petName);
+    public void waterPets(String petName, int waterAmount){ VirtualPet reduceThirstFromPet = findPet(petName);
         reduceThirstFromPet.waterPet(10);
     }
 

@@ -60,10 +60,10 @@ public class VirtualPetShelterTest {
         assertEquals(allPets, containsInAnyOrder(pet1,pet2,pet3,pet4));
     }
     @Test
-    public void shouldBeAbleToRemovePet(){
+    public void shouldBeAbleToAdoptOrRemovePet(){
         underTest.adopt(pet1);
         shelter.VirtualPet retrievePet = underTest.findPet("Oscar");
-        assertEquals(retrievePet,null);
+        assertEquals(retrievePet,"");
     }
 
 }
