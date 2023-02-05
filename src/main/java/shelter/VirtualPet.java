@@ -2,21 +2,23 @@ package shelter;
 
 public class VirtualPet {
 
-    String petName;
-    String description;
-    int hunger;
-    int thirst;
-    int boredom;
-    int tiredness;
+    private String petName;
+    private String description;
+    private int petHappiness;
+    private int petHealth;
+    private int petHunger;
+    private int petThirst;
+    private int petWaste;
 
-    public VirtualPet(String petName, String description, int hunger, int thirst, int boredom, int tiredness) {
+    public VirtualPet(String petName, String description, int petHappiness, int petHealth, int petHunger, int petThirst, int petWaste) {
 
         this.petName = petName;
         this.description = description;
-        this.hunger = hunger;
-        this.thirst = thirst;
-        this.boredom = boredom;
-        this.tiredness = tiredness;
+        this.petHappiness = petHappiness;
+        this.petHealth = petHealth;
+        this.petHunger = petHunger;
+        this.petThirst = petThirst;
+        this.petWaste = petWaste;
     }
 
     public String getPetName() {
