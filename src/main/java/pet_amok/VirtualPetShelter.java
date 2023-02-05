@@ -1,4 +1,4 @@
-package shelter;
+package pet_amok;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -7,7 +7,11 @@ import java.util.Map.Entry;
 
 public class VirtualPetShelter {
 
-    private Map<String, VirtualPet> pets = new HashMap<>();
+    public Map<String, VirtualPet> pets = new HashMap<>();
+    public Collection<VirtualPet> availablePet() {
+        return pets.values();
+    }
+
 
     public void addPet(VirtualPet petToAdd){
         pets.put(petToAdd.getPetName(), petToAdd);}
@@ -19,7 +23,7 @@ public class VirtualPetShelter {
 
     public void getAllPets() {
         for (Entry<String, VirtualPet> showPet : pets.entrySet()) {
-            System.out.println(showPet.getValue().getPetName() + " " + showPet.getValue().petName);
+            System.out.println(showPet.getValue().getPetName() + " " + showPet.getValue().getPetName());
         }
     }
 
@@ -35,25 +39,25 @@ public class VirtualPetShelter {
 
     public void feedAllPets(){
         for (Entry<String, VirtualPet> showPet : pets.entrySet()) {
-            System.out.println(showPet.getValue().getHunger() + " " + showPet.getValue().petName);
+            System.out.println(showPet.getValue().getHunger() + " " + showPet.getValue().getPetName());
         }
     }
 
     public void waterAllPets(){
         for (Entry<String, VirtualPet> showPet : pets.entrySet()) {
-            System.out.println(showPet.getValue().getThirst() + " " + showPet.getValue().petName);
+            System.out.println(showPet.getValue().getThirst() + " " + showPet.getValue().getPetName());
         }
     }
 
     public void playWithAllPets(){
         for (Entry<String, VirtualPet> showPet : pets.entrySet()) {
-            System.out.println(showPet.getValue().getTiredness() + " " + showPet.getValue().petName);
+            System.out.println(showPet.getValue().getTiredness() + " " + showPet.getValue().getPetName());
         }
     }
 
     public void restAllPets(){
         for (Entry<String, VirtualPet> showPet : pets.entrySet()) {
-            System.out.println(showPet.getValue().getTiredness() + " " + showPet.getValue().petName);
+            System.out.println(showPet.getValue().getTiredness() + " " + showPet.getValue().getPetName());
         }
     }
 
@@ -64,13 +68,13 @@ public class VirtualPetShelter {
     }
 
     public void playWithPets(String petName, int playAmount){
-        shelter.VirtualPet reduceBoredomFromPet = findPet(petName);
+        pet_amok.VirtualPet reduceBoredomFromPet = findPet(petName);
         reduceBoredomFromPet.playWithPet(playAmount);
 
     }
 
     public void restPet(String petName, int restAmount){
-        shelter.VirtualPet reduceTirednessFromPet = findPet(petName);
+        pet_amok.VirtualPet reduceTirednessFromPet = findPet(petName);
         reduceTirednessFromPet.restPet(restAmount);
     }
 
@@ -84,6 +88,6 @@ public class VirtualPetShelter {
     }
 
 
-    public void removePet() {
+    public void removePet(String up) {
     }
 }

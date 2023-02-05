@@ -1,4 +1,4 @@
-package shelter;
+package pet_amok;
 
 import java.util.Scanner;
 
@@ -7,10 +7,10 @@ public class VirtualPetShelterApplication {
         Scanner input = new Scanner(System.in);
 
         VirtualPetShelter myPet = new VirtualPetShelter();
-        shelter.VirtualPet pet1 = new shelter.VirtualPet("Oscar", "Dog-Big", 50, 50, 50, 50);
-        shelter.VirtualPet pet2 = new shelter.VirtualPet("Phoebe", "Dog-Small", 75, 70, 100, 25);
-        shelter.VirtualPet pet3 = new shelter.VirtualPet("Sam", "Cat-Big", 30, 100, 45, 20);
-        shelter.VirtualPet pet4 = new shelter.VirtualPet("Kitten", "Cat-Small", 50, 60, 30, 70);
+        pet_amok.VirtualPet pet1 = new pet_amok.VirtualPet("Oscar", "Dog-Big", 50, 50, 50, 5, 25, 30, 33);
+        pet_amok.VirtualPet pet2 = new pet_amok.VirtualPet("Phoebe", "Dog-Small", 75, 70, 100, 25, 33, 41, 13);
+        pet_amok.VirtualPet pet3 = new pet_amok.VirtualPet("Sam", "Cat-Big", 30, 100, 45, 20, 35, 13,66);
+        pet_amok.VirtualPet pet4 = new pet_amok.VirtualPet("Kitten", "Cat-Small", 50, 60, 30, 70, 22,43,12);
 
         myPet.addPet(pet1);
         myPet.addPet(pet2);

@@ -1,24 +1,29 @@
-package shelter;
+package pet_amok;
 
 public class VirtualPet {
 
     private String petName;
     private String description;
-    private int petHappiness;
-    private int petHealth;
-    private int petHunger;
-    private int petThirst;
-    private int petWaste;
+    private int happiness;
+    private int health;
+    private int hunger;
+    private int thirst;
+    private int waste;
+    private int tiredness;
+    private int boredom;
 
-    public VirtualPet(String petName, String description, int petHappiness, int petHealth, int petHunger, int petThirst, int petWaste) {
+
+    public VirtualPet(String petName, String description, int happiness, int health, int hunger, int thirst, int waste, int tiredness, int boredom) {
 
         this.petName = petName;
         this.description = description;
-        this.petHappiness = petHappiness;
-        this.petHealth = petHealth;
-        this.petHunger = petHunger;
-        this.petThirst = petThirst;
-        this.petWaste = petWaste;
+        this.happiness = happiness;
+        this.health = health;
+        this.hunger = hunger;
+        this.thirst = thirst;
+        this.waste = waste;
+        this.tiredness = tiredness;
+        this.boredom = boredom;
     }
 
     public String getPetName() {
@@ -26,9 +31,15 @@ public class VirtualPet {
 
     }
 
+
+
     public String getDescription() {
         return description;
 
+    }
+
+    public int getPetHappiness() {
+        return happiness;
     }
 
     public int getHunger() {
@@ -46,17 +57,17 @@ public class VirtualPet {
         return boredom;
     }
 
-    public int getTiredness() {
+    public int getTiredness(){
         return tiredness;
-
     }
 
     // Behaviors
-    public void feedPet(int feedAmount, int waterAmount, int restAmount, int playAmount) {
+    public void feedPet(int feedAmount, int waterAmount, int restAmount, int playAmount, int happinessAmount) {
         hunger -= feedAmount;
         thirst -= waterAmount;
         tiredness += restAmount;
         boredom += playAmount;
+        happiness += happinessAmount;
     }
 
 
@@ -88,6 +99,11 @@ public class VirtualPet {
         this.tiredness += 5;
         this.thirst += 5;
         this.boredom += 5;
+        this.tiredness +=5;
+        this.happiness +=5;
+    }
+
+    protected void walk() {
     }
 }
 
