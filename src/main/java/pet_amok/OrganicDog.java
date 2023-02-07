@@ -1,6 +1,6 @@
 package pet_amok;
 
-public class OrganicDog extends Dog implements OrganicPet{
+public class OrganicDog extends Dog implements OrganicPet {
 
     private int hunger = 0;
     private int thirst = 0;

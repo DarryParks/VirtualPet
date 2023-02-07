@@ -5,7 +5,7 @@ public class RoboticCat extends VirtualRoboticPet implements RoboticPet {
     private int maintenance;
     private int oil;
 
-    public RoboticCat(String name, int happiness, int health, int oil, int maintenance){
+    public RoboticCat(String name, int happiness, int health, int oil, int maintenance) {
         super(name, happiness, health, oil, maintenance);
         this.setMaintenance(maintenance);
         this.setOil(oil);
@@ -13,20 +13,20 @@ public class RoboticCat extends VirtualRoboticPet implements RoboticPet {
     }
 
     @Override
-    public void oil(){
-        setMaintenance(getPetMaintenanceLevel() +5);
+    public void oil() {
+        setMaintenance(getPetMaintenanceLevel() + 5);
     }
 
-    public int getPetMaintenanceLevel(){
+    public int getPetMaintenanceLevel() {
 
         return maintenance;
     }
 
-    public void setMaintenance(int maintenance){
+    public void setMaintenance(int maintenance) {
 
     }
 
-    public void setOil(int oil){
+    public void setOil(int oil) {
 
     }
 
