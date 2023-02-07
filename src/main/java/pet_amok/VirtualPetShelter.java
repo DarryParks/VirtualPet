@@ -3,91 +3,179 @@ package pet_amok;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 public class VirtualPetShelter {
 
-    public Map<String, VirtualPet> pets = new HashMap<>();
-    public Collection<VirtualPet> availablePet() {
-        return pets.values();
+    Map<String, VirtualPet> myShelter = new HashMap<String, VirtualPet>();
+    public Collection<VirtualPet> availablePets() {
+        return myShelter.values();
+    }
+
+    public void addPet(VirtualPet adoptablePet) {
+        String petsAvailable = adoptablePet.getPetName();
+        myShelter.put(petsAvailable, adoptablePet);
+    }
+
+    public void removePet(String upForAdoption) {
+        myShelter.remove(upForAdoption);
+
+    }
+
+    //////
+
+
+
+    public void addRoboticPet(VirtualRoboticPet adoptablePet) {
+        String petsAvailable = adoptablePet.getRoboticPetName();
+        myRoboticShelter.put(petsAvailable, adoptablePet);
+    }
+
+    public void removeRoboticPet(String upForAdoption) {
+        myRoboticShelter.remove(upForAdoption);
     }
 
 
-    public void addPet(VirtualPet petToAdd){
-        pets.put(petToAdd.getPetName(), petToAdd);}
 
-    public VirtualPet findPet(String petName){
 
-        return this.pets.get(petName);
+    ///////
+
+    Map<String, VirtualRoboticPet> myRoboticShelter = new HashMap<String, VirtualRoboticPet>();
+    public Collection<VirtualRoboticPet> availableRoboticPets() {
+        return myRoboticShelter.values();
     }
 
-    public void getAllPets() {
-        for (Entry<String, VirtualPet> showPet : pets.entrySet()) {
-            System.out.println(showPet.getValue().getPetName() + " " + showPet.getValue().getPetName());
+    public void addRoboticPet(VirtualPet adoptablePet) {
+        String petsAvailable = adoptablePet.getPetName();
+        myShelter.put(petsAvailable, adoptablePet);
+    }
+
+
+
+
+    public void showAllPets(VirtualPet adoptablePet) {
+        for (Map.Entry<String, VirtualPet> entry : myShelter.entrySet()) {
+            entry.getValue();
+            System.out.println(       "Name: " + entry.getKey()
+                    + "\t| Type: " + entry.getValue().getOrganicPetType()
+                    + "\t| Health: " + entry.getValue().getPetHealth()
+                    + "\t| Happiness: " + entry.getValue().getPetHappiness()
+                    + "\t| Hunger: " + entry.getValue().getPetHunger()
+                    + "\t| Thirst: " + entry.getValue().getPetThirst()
+                    + "\t| Waste Level: " + entry.getValue().getWasteLevel()
+            );
+
+        }
+
+
+    }
+
+
+
+
+    public void showAllRoboticPets(VirtualRoboticPet adoptablePet) {
+        for (Map.Entry<String, VirtualRoboticPet> entry : myRoboticShelter.entrySet()) {
+            entry.getValue();
+            System.out.println(   "Name: " + entry.getKey()
+                    + "\t| Type: " + entry.getValue().getRoboticPetType()
+                    + "\t| Health: " + entry.getValue().getRoboticPetHealth()
+                    + "\t| Happiness: " + entry.getValue().getRoboticPetHappiness()
+                    + "\t| Oil Level: " + entry.getValue().getPetOilLevel()
+                    + "\t| Maintenance Level: " + entry.getValue().getPetMaintenanceLevel()
+
+            );
         }
     }
 
-    public Collection<VirtualPet> pets() {
-
-        return pets.values();
-    }
-
-    public void adopt(String petName){
-
-        this.pets.remove(petName);
-    }
-
-    public void feedAllPets(){
-        for (Entry<String, VirtualPet> showPet : pets.entrySet()) {
-            System.out.println(showPet.getValue().getHunger() + " " + showPet.getValue().getPetName());
+    public void getPetStats(VirtualPet adoptablePet) {
+        for (Map.Entry<String, VirtualPet> entry : myShelter.entrySet()) {
+            entry.getValue();
+            System.out.println("Name : " + entry.getKey() + "\t| Health " + entry.getValue().getPetHealth()
+                    + "\t| Happiness: " + entry.getValue().getPetHappiness());
         }
     }
 
-    public void waterAllPets(){
-        for (Entry<String, VirtualPet> showPet : pets.entrySet()) {
-            System.out.println(showPet.getValue().getThirst() + " " + showPet.getValue().getPetName());
+    public VirtualPet getPetNamed(String name) {
+        return myShelter.get(name);
+    }
+
+    public void feedPets() {
+        for (VirtualPet pet : availablePets()) {
+            if (pet instanceof OrganicPet) {
+                OrganicPet organicPet = (OrganicPet) pet;
+                organicPet.tick();
+            } else if (pet instanceof RoboticPet) {
+                RoboticPet roboticPet = (RoboticPet) pet;
+                roboticPet.tick();
+            }
+
+
         }
     }
 
-    public void playWithAllPets(){
-        for (Entry<String, VirtualPet> showPet : pets.entrySet()) {
-            System.out.println(showPet.getValue().getTiredness() + " " + showPet.getValue().getPetName());
+    public void tickAllPets(VirtualPet adoptablePet){
+        for (VirtualPet pet: availablePets()){
+            if (pet instanceof OrganicPet){
+                OrganicPet organicPet = (OrganicPet) pet;
+                organicPet.water();
+            }
+
+        }
+
+    }
+
+    public void waterAllPets() {
+        for (VirtualPet pet : availablePets()) {
+            if (pet instanceof RoboticPet) {
+                RoboticPet roboticPet = (RoboticPet) pet;
+                roboticPet.oil();
+            }
         }
     }
 
-    public void restAllPets(){
-        for (Entry<String, VirtualPet> showPet : pets.entrySet()) {
-            System.out.println(showPet.getValue().getTiredness() + " " + showPet.getValue().getPetName());
+    public void oilAllRobots() {
+        for (VirtualPet pet : availablePets()) {
+            if (pet instanceof RoboticPet) {
+                RoboticPet roboticPet = (RoboticPet) pet;
+                roboticPet.oil();
+            }
+        }
+    }
+
+    public boolean hasPets() {
+        return !myShelter.isEmpty();
+    }
+
+    public void cleanAllCages() {
+        for (VirtualPet pet : availablePets()) {
+            if (pet instanceof OrganicDog) {
+                OrganicDog organicDog = (OrganicDog) pet;
+                organicDog.cleanCages();
+            }
+        }
+    }
+
+    public void emptyLitterBox() {
+        for (VirtualPet pet : availablePets()) {
+            if (pet instanceof OrganicCat) {
+                OrganicCat organicCat = (OrganicCat) pet;
+                organicCat.emptyLitterBox();
+            }
+        }
+    }
+
+    public void walkDogs() {
+        for (VirtualPet pet : availablePets()) {
+            if (pet instanceof Dog) {
+                Dog aDog = (Dog) pet;
+            }
+        }
+    }
+
+    public void showPetName(VirtualPet pet){
+        for (Map.Entry<String, VirtualPet> entry : myShelter.entrySet()){
+            System.out.println(entry.getKey() + "\n");
         }
     }
 
 
-
-    public void waterPets(String petName, int waterAmount){ VirtualPet reduceThirstFromPet = findPet(petName);
-        reduceThirstFromPet.waterPet(10);
-    }
-
-    public void playWithPets(String petName, int playAmount){
-        pet_amok.VirtualPet reduceBoredomFromPet = findPet(petName);
-        reduceBoredomFromPet.playWithPet(playAmount);
-
-    }
-
-    public void restPet(String petName, int restAmount){
-        pet_amok.VirtualPet reduceTirednessFromPet = findPet(petName);
-        reduceTirednessFromPet.restPet(restAmount);
-    }
-
-    public void showPets(){
-        for(VirtualPet pet: pets.values()){
-            System.out.println(  "Name: " +  pet.getPetName() + " Description: " + pet.getDescription() + " Hunger: " + pet.getHunger() + " Thirst: " + pet.getThirst() + " Boredom: " + pet.getBoredom() + " Tiredness: " + pet.getTiredness());
-           /*System.out.println(pet.getPetName() + " " + pet.getDescription() + " " + pet.getThirst());
-           System.out.println(pet.getPetName() + " " + pet.getDescription() + " " + pet.getBoredom());
-           System.out.println(pet.getPetName() + " " + pet.getDescription() + " " + pet.getTiredness());*/
-        }
-    }
-
-
-    public void removePet(String up) {
-    }
 }

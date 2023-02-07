@@ -1,110 +1,85 @@
 package pet_amok;
 
 public class VirtualPet {
-
     private String petName;
-    private String description;
-    private int happiness;
-    private int health;
-    private int hunger;
-    private int thirst;
-    private int waste;
-    private int tiredness;
-    private int boredom;
+    private int petHappiness;
+    private int petHealth;
+    private int petHunger;
+    private int petThirst;
+    private int petWaste;
 
 
-    public VirtualPet(String petName, String description, int happiness, int health, int hunger, int thirst, int waste, int tiredness, int boredom) {
+    public VirtualPet(String name, int happiness, int health, int hunger, int thirst, int waste)/*, int oilLevel, int maintenanceLevel)*/{
+        petName = name;
+        petHappiness = happiness;
+        petHealth = health;
+        petHunger = hunger;
+        petThirst = thirst;
+        petWaste = waste;
 
-        this.petName = petName;
-        this.description = description;
-        this.happiness = happiness;
-        this.health = health;
-        this.hunger = hunger;
-        this.thirst = thirst;
-        this.waste = waste;
-        this.tiredness = tiredness;
-        this.boredom = boredom;
     }
-
-    public String getPetName() {
+    // Getters
+    public String getPetName(){
         return petName;
+    }
 
+    public String getOrganicPetType(){
+        return "Organic";
+    }
+
+    public int getPetHappiness(){
+        return petHappiness;
+    }
+
+    public int getPetHunger(){
+        return petHunger;
+    }
+
+    public int getPetThirst(){
+        return petThirst;
+    }
+
+    public int getPetHealth(){
+        return petHealth;
+    }
+    public int getWasteLevel() {
+        return petWaste;
     }
 
 
 
-    public String getDescription() {
-        return description;
+    // Setters
+    public void setPetName(String petName){
+        this.petName = petName;
 
     }
 
-    public int getPetHappiness() {
-        return happiness;
-    }
-
-    public int getHunger() {
-
-        return hunger;
-    }
-
-    public int getThirst() {
-
-        return thirst;
-    }
-
-    public int getBoredom() {
-
-        return boredom;
-    }
-
-    public int getTiredness(){
-        return tiredness;
-    }
-
-    // Behaviors
-    public void feedPet(int feedAmount, int waterAmount, int restAmount, int playAmount, int happinessAmount) {
-        hunger -= feedAmount;
-        thirst -= waterAmount;
-        tiredness += restAmount;
-        boredom += playAmount;
-        happiness += happinessAmount;
-    }
-
-
-    public void playWithPet(int playAmount) {
-        boredom -= playAmount;
+    public void setPetHappiness(int petHappiness){
+        this.petHappiness = petHappiness;
 
     }
 
-    public void waterPet(int waterAmount) {
-        thirst -= waterAmount;
+    public void setPetHealth(int petHealth){
+        this.petHealth = petHealth;
 
     }
 
-    public void restPet(int restAmount) {
-        tiredness -= restAmount;
+    public void play(){
+        petHappiness += 10;
+
+        if(petHunger <= 20){
+            System.out.println("Please feed Pet before Health declines");
+        }
     }
 
-    public void petDisplay() {
-        System.out.println("Name: " + getPetName());
-        System.out.println("Pet Description: " + getDescription());
-        System.out.println("Hunger: " + getHunger());
-        System.out.println("Thirst: " + getThirst());
-        System.out.println("Boredom: " + getBoredom());
-        System.out.println("Tiredness: " + getTiredness());
-    }
+    public  void tick(){
+        petHappiness -= 20;
+        petHealth -= 10;
+    };
 
-    public void tick() {
-        this.hunger += 5;
-        this.tiredness += 5;
-        this.thirst += 5;
-        this.boredom += 5;
-        this.tiredness +=5;
-        this.happiness +=5;
-    }
 
-    protected void walk() {
-    }
+
 }
+
 
 
