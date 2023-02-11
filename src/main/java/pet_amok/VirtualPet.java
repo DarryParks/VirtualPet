@@ -50,7 +50,7 @@ public class VirtualPet {
 
 
     // Setters
-    public void setPetName(String petName) {
+    public void PetName(String petName) {
         this.petName = petName;
 
     }

@@ -49,7 +49,7 @@ public class VirtualPetShelter {
     }
 
 
-    public void showAllPets(VirtualPet adoptablePet) {
+    public void showOrganicPets(VirtualPet adoptablePet) {
         for (Map.Entry<String, VirtualPet> entry : myShelter.entrySet()) {
             entry.getValue();
             System.out.println("Name: " + entry.getKey()
@@ -162,6 +162,7 @@ public class VirtualPetShelter {
         for (VirtualPet pet : availablePets()) {
             if (pet instanceof Dog) {
                 Dog aDog = (Dog) pet;
+                aDog.walk();
             }
         }
     }

@@ -1,6 +1,6 @@
 package pet_amok;
 
-public abstract class OrganicCat extends Cat implements OrganicPet {
+public class OrganicCat extends Cat implements OrganicPet {
     private int hunger = 0;
     private int thirst = 0;
     private int waste = 0;
@@ -10,6 +10,11 @@ public abstract class OrganicCat extends Cat implements OrganicPet {
         this.setHunger(hunger);
         this.setThirst(thirst);
         this.setWaste(waste);
+
+    }
+
+    @Override
+    public void walk() {
 
     }
 
