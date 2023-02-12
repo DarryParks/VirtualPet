@@ -6,11 +6,11 @@ public class OrganicDog extends VirtualOrganicPet implements OrganicPet {
     private int waste;
 
     public OrganicDog(String name, int happiness, int health, int hunger, int thirst, int waste) {
-        super(name, happiness, health, hunger, thirst, waste);
+        super(name, happiness, health, hunger, thirst);
 
-        this.setHunger(hunger);
-        this.setThirst(thirst);
-        this.setWaste(waste);
+        this.hunger = hunger;
+        this.thirst = thirst;
+        this.waste = waste;
     }
 
     @Override

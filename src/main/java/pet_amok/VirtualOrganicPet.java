@@ -1,17 +1,20 @@
 package pet_amok;
 
-public class VirtualOrganicPet extends VirtualPet implements OrganicPet{
-    private String petName;
+public abstract class VirtualOrganicPet extends VirtualPet implements OrganicPet{
+    private String name;
+    private int hunger;
     private int thirst;
-    private int petWaste;
+    private int waste;
 
 
 
-    public VirtualOrganicPet(String name, int happiness, int health, int hunger, int thirst, int petWaste)/*, int oilLevel, int maintenanceLevel)*/ {
-        super(name, happiness, health, hunger);
+    public VirtualOrganicPet(String name, int happiness, int health, int hunger, int thirst, int waste)/*, int oilLevel, int maintenanceLevel)*/ {
+        super(name, happiness, health);
 
         this.thirst = thirst;
-        this.petWaste = petWaste;
+        this.hunger = hunger;
+        this.waste = waste;
+
 
     }
 
@@ -26,6 +29,7 @@ public class VirtualOrganicPet extends VirtualPet implements OrganicPet{
     }
 
     public int getWasteLevel() {
+        int petWaste = 20;
         return petWaste;
     }
 
