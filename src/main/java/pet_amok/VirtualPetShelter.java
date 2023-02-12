@@ -14,7 +14,7 @@ public class VirtualPetShelter {
     }
 
     public void addPet(VirtualPet adoptablePet) {
-        String petsAvailable = adoptablePet.getPetName();
+        String petsAvailable = adoptablePet.getName();
         myShelter.put(petsAvailable, adoptablePet);
     }
 
@@ -57,10 +57,10 @@ public class VirtualPetShelter {
     public void showOrganicPets() {
         for (Map.Entry<String, VirtualOrganicPet> entry : myOrganicShelter.entrySet()) {
             entry.getValue();
-            System.out.println("Name: " + entry.getValue().getPetName()
+            System.out.println("Name: " + entry.getValue().getName()
                     + "\t| Type: " + entry.getValue().getOrganicPetType()
-                    + "\t| Health: " + entry.getValue().getPetHealth()
-                    + "\t| Happiness: " + entry.getValue().getPetHappiness()
+                    + "\t| Health: " + entry.getValue().getHealth()
+                    + "\t| Happiness: " + entry.getValue().getHappiness()
                     + "\t| Hunger: " + entry.getValue().getPetHunger()
                     + "\t| Thirst: " + entry.getValue().getPetThirst()
                     + "\t| Waste Level: " + entry.getValue().getWasteLevel()
@@ -89,8 +89,8 @@ public class VirtualPetShelter {
     public void getPetStats(VirtualPet adoptablePet) {
         for (Map.Entry<String, VirtualPet> entry : myShelter.entrySet()) {
             entry.getValue();
-            System.out.println("Name : " + entry.getKey() + "\t| Health " + entry.getValue().getPetHealth()
-                    + "\t| Happiness: " + entry.getValue().getPetHappiness());
+            System.out.println("Name : " + entry.getKey() + "\t| Health " + entry.getValue().getHealth()
+                    + "\t| Happiness: " + entry.getValue().getHappiness());
         }
     }
 

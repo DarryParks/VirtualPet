@@ -1,9 +1,9 @@
 package pet_amok;
 
-public class OrganicCat extends Cat implements OrganicPet {
-    private int hunger = 0;
-    private int thirst = 0;
-    private int waste = 0;
+public class OrganicCat extends VirtualOrganicPet implements OrganicPet {
+    private int hunger;
+    private int thirst;
+    private int waste;
 
     public OrganicCat(String name, int happiness, int hunger, int health, int thirst, int waste) {
         super(name, happiness, health, hunger, thirst, waste);
@@ -20,12 +20,12 @@ public class OrganicCat extends Cat implements OrganicPet {
 
     @Override
     public void tick() {
-        setPetHappiness(getPetHappiness() - 1);
+        setHappiness(getHappiness() - 1);
         setHunger(getHunger() + 1);
         setThirst(getThirst() + 1);
         setWaste(getWaste() + 1);
-        if (getPetHappiness() <= 10|| getHunger() >= 10 || getWaste() >= 10) ;
-        setPetHealth(getPetHealth() - 1);
+        if (getHappiness() <= 10|| getHunger() >= 10 || getWaste() >= 10) ;
+        setHealth(getHealth() - 1);
 
     }
 

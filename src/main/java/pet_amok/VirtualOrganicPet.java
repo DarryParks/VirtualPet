@@ -1,50 +1,28 @@
 package pet_amok;
 
-public class VirtualOrganicPet extends VirtualPet {
+public class VirtualOrganicPet extends VirtualPet implements OrganicPet{
     private String petName;
-    private int petHappiness;
-    private int petHealth;
-    private int petHunger;
-    private  int petThirst;
+    private int thirst;
     private int petWaste;
 
 
 
+    public VirtualOrganicPet(String name, int happiness, int health, int hunger, int thirst, int petWaste)/*, int oilLevel, int maintenanceLevel)*/ {
+        super(name, happiness, health, hunger);
 
-    public VirtualOrganicPet(String name, int happiness, int health, int hunger, int thirst, int waste)/*, int oilLevel, int maintenanceLevel)*/ {
-        super(name);
-        this.petName = name;
-        this.petHappiness = 50;
-        this.petHealth = 50;
-        this.petHunger = 50;
-        this.petThirst = 50;
-        this.petWaste = 50;
+        this.thirst = thirst;
+        this.petWaste = petWaste;
 
     }
 
     // Getters
-    public String getPetName() {
-        return petName;
-    }
-
+  @Override
     public String getOrganicPetType() {
         return "Organic";
     }
 
-    public int getPetHappiness() {
-        return petHappiness;
-    }
-
-    public int getPetHunger() {
-        return petHunger;
-    }
-
     public int getPetThirst() {
-        return petThirst;
-    }
-
-    public int getPetHealth() {
-        return petHealth;
+        return thirst;
     }
 
     public int getWasteLevel() {
@@ -52,25 +30,14 @@ public class VirtualOrganicPet extends VirtualPet {
     }
 
 
-    // Setters
-    public void PetName(String petName) {
-        this.petName = petName;
-
-    }
-
-    public void setPetHappiness(int petHappiness) {
-        this.petHappiness = petHappiness;
-
-    }
-
-    public void setPetHealth(int petHealth) {
-        this.petHealth = petHealth;
-
-    }
-
     @Override
     public void feed() {
         super.feed();
+    }
+
+    @Override
+    public void water() {
+
     }
 
     @Override
@@ -78,9 +45,12 @@ public class VirtualOrganicPet extends VirtualPet {
         super.play();
     }
 
+    @Override
+    public void walk() {
+
+    }
+
     public void tick() {
-        petHappiness -= 20;
-        petHealth -= 10;
     }
 
 
