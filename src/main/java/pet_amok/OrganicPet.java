@@ -5,4 +5,6 @@ public interface OrganicPet {
     void tick();
     void feed();
     void water();
+
+
 }

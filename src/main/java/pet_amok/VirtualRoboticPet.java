@@ -1,19 +1,20 @@
 package pet_amok;
 
-public abstract class VirtualRoboticPet {
+public class VirtualRoboticPet extends VirtualPet{
     private String roboticPetName;
     private int roboticPetHappiness;
     private int roboticPetHealth;
     private int petOilLevel;
-    private int petMaintenanceLevel;
+    private int BatteryLevel;
 
 
-    public VirtualRoboticPet(String roboticName, int roboticHappiness, int roboticHealth, int oilLevel, int maintenanceLevel){
-        roboticPetName = roboticName;
-        roboticPetHappiness = roboticHappiness;
-        roboticPetHealth = roboticHealth;
-        petOilLevel = oilLevel;
-        petMaintenanceLevel = maintenanceLevel;
+    public VirtualRoboticPet(String name, int roboticHappiness, int roboticHealth, int oilLevel, int BatteryLevel){
+        super(name);
+        this.roboticPetName = name;
+        this.roboticPetHappiness = roboticHappiness;
+        this.roboticPetHealth = roboticHealth;
+        this.petOilLevel = oilLevel;
+        this.BatteryLevel = BatteryLevel;
     }
 
     // Getters
@@ -37,8 +38,8 @@ public abstract class VirtualRoboticPet {
         return roboticPetHealth;
     }
 
-    public int getPetMaintenanceLevel() {
-        return petMaintenanceLevel;
+    public int getBatteryLevel() {
+        return BatteryLevel;
     }
 
 
@@ -71,7 +72,7 @@ public abstract class VirtualRoboticPet {
         roboticPetHappiness -= 20;
         roboticPetHealth -= 10;
 
-    };
+    }
 
 
 

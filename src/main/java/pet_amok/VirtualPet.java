@@ -5,7 +5,7 @@ public class VirtualPet {
     private int petHappiness;
     private int petHealth;
     private int petHunger;
-    private int petThirst;
+    private  int petThirst;
     private int petWaste;
 
 
@@ -16,6 +16,16 @@ public class VirtualPet {
         petHunger = hunger;
         petThirst = thirst;
         petWaste = waste;
+
+    }
+
+    public VirtualPet(String name) {
+        petName = name;
+        petHappiness = 20;
+        petHealth = 15;
+        petHunger = 3;
+        petThirst = 34;
+        petWaste = 22;
 
     }
 
@@ -67,20 +77,44 @@ public class VirtualPet {
 
     public void play() {
         petHappiness += 10;
+        petHealth += 10;
+        petHunger += 5;
+        petThirst += 10;
+        petWaste  -= 22;
 
-        if (petHunger <= 20) {
+       // add code here
+    }
+
+    public void feed() {
+        petHappiness += 10;
+        petHealth += 10;
+        petHunger += 5;
+        petThirst += 10;
+        petWaste  -= 22;
+
+        if (petHunger == 20) {
             System.out.println("Please feed Pet before Health declines");
         }
     }
 
-    public void tick() {
-        petHappiness -= 20;
-        petHealth -= 10;
+
+    public void getWasteLevel(){
+        petHappiness += 10;
+        petHealth += 10;
+        petHunger += 5;
+        petThirst += 10;
+
+
     }
 
-    ;
-
-
+    public void tick() {
+        petHappiness -= 5;
+        petHealth -= 5;
+        petHunger += 5;
+        petThirst += 10;
+        petWaste  = 22;
+    }
+    
 }
 
 

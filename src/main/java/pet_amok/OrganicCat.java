@@ -24,7 +24,7 @@ public class OrganicCat extends Cat implements OrganicPet {
         setHunger(getHunger() + 1);
         setThirst(getThirst() + 1);
         setWaste(getWaste() + 1);
-        if (getPetHappiness() <= 0 || getHunger() >= 10 || getWaste() >= 10) ;
+        if (getPetHappiness() <= 10|| getHunger() >= 10 || getWaste() >= 10) ;
         setPetHealth(getPetHealth() - 1);
 
     }
