@@ -7,8 +7,8 @@ public class RoboticDog extends VirtualRoboticPet implements RoboticPet {
 
     public RoboticDog(String name, int happiness, int health, int oil, int batteryLife) {
         super(name, happiness, health, oil, batteryLife);
-        this.setBatteryLife(batteryLife);
-        this.setOil(oil);
+        this.batteryLife = batteryLife;
+        this.oil = oil;
 
     }
 
@@ -17,7 +17,7 @@ public class RoboticDog extends VirtualRoboticPet implements RoboticPet {
         setRoboticPetHappiness(getRoboticPetHappiness() - 1);
         setBatteryLife(getBatteryLife() - 1);
 
-        if (getBatteryLife() <= 10|| getBatteryLife() <= 5) {
+        if (getBatteryLife() <= 10 || getBatteryLife() <= 5) {
             setRoboticPetHealth(getRoboticPetHealth() - 1);
         }
     }

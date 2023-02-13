@@ -2,7 +2,7 @@ package pet_amok;
 
 public interface RoboticPet {
 
-    public void tick();
+    void tick();
 
-    public void oil();
+    void oil();
 }

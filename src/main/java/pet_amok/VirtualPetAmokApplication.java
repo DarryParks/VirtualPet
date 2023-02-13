@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class VirtualPetAmokApplication {
     public static void main(String[] args) {
 
-        VirtualPet pets = new OrganicDog("Oscar ", 10, 10, 10, 10, 0);
+        VirtualPet pets = new OrganicDog("Oscar ", 10, 10, 10, 10, 10);
         VirtualPetShelter myShelter = new VirtualPetShelter();
         myShelter.addPet(pets);
 
@@ -13,12 +13,12 @@ public class VirtualPetAmokApplication {
         VirtualPetShelter myRoboticShelter = new VirtualPetShelter();
         myRoboticShelter.addRoboticPet(pets2);
 
-        VirtualPet pets3 = new OrganicCat("Raymond ", 10, 10, 20, 15, 30) ;
+        VirtualPet pets3 = new OrganicCat("Raymond ", 10, 10, 20, 15, 10) ;
         VirtualPetShelter myShelter2 = new VirtualPetShelter();
         myShelter.addPet(pets3);
 
 
-        VirtualRoboticPet pets4 = new RoboticCat("Whiskers ", 10, 10, 10, 0);
+        VirtualRoboticPet pets4 = new RoboticCat("Whiskers ", 10, 10, 10, 10);
         VirtualPetShelter myRoboticShelter2 = new VirtualPetShelter();
         myRoboticShelter2.addRoboticPet(pets4);
 
@@ -49,10 +49,10 @@ public class VirtualPetAmokApplication {
             switch (userChoice) {
                 //feeding all organic animals.
                 case "1" -> {
-                    myShelter2.tickAllPets(pets);
+                    myShelter.tickAllPets(pets);
                     myShelter2.tickAllPets(pets3);
                     myShelter2.showOrganicPets();
-                    myShelter.feedPets();
+                    myShelter.feedPets(pets);
                     System.out.println();
                     System.out.println("You feed all organic pets");
                 }

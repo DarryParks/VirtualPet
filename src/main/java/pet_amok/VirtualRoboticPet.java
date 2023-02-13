@@ -4,15 +4,16 @@ public class VirtualRoboticPet extends VirtualPet{
     private String roboticPetName;
     private int roboticPetHappiness;
     private int roboticPetHealth;
-    private int petOilLevel;
-    private int BatteryLevel;
+    private final int petOilLevel;
+    private final int BatteryLevel;
 
 
-    public VirtualRoboticPet(String name, int roboticHappiness, int roboticHealth, int oilLevel, int BatteryLevel){
-        super(name);
+
+    public VirtualRoboticPet(String name, int happiness, int health, int oilLevel, int BatteryLevel){
+        super(name,happiness, health);
         this.roboticPetName = name;
-        this.roboticPetHappiness = roboticHappiness;
-        this.roboticPetHealth = roboticHealth;
+        this.roboticPetHappiness = happiness;
+        this.roboticPetHealth = health;
         this.petOilLevel = oilLevel;
         this.BatteryLevel = BatteryLevel;
     }
@@ -68,7 +69,7 @@ public class VirtualRoboticPet extends VirtualPet{
         }
     }
 
-    public  void tick(){
+    public void tick(){
         roboticPetHappiness -= 20;
         roboticPetHealth -= 10;
 

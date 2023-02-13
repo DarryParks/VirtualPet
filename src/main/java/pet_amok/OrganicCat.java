@@ -4,10 +4,12 @@ public class OrganicCat extends VirtualOrganicPet implements OrganicPet {
     private int hunger;
     private int waste;
 
-    public OrganicCat(String name, int happiness, int hunger, int health, int waste) {
-            super(name, happiness, health, hunger, thirst, waste);
+
+    public OrganicCat(String name, int happiness, int hunger, int health, int thirst, int waste) {
+        super(name, happiness, health, hunger, thirst, waste);
         this.hunger = hunger;
         this.waste = waste;
+        this.thirst = thirst;
 
     }
 
@@ -29,6 +31,9 @@ public class OrganicCat extends VirtualOrganicPet implements OrganicPet {
         setThirst(getThirst() + 5);
     }
 
+    private void setThirst(int i) {
+    }
+
     public void emptyLitterBox() {
         setWaste(getWaste() - 5);
     }
@@ -42,12 +47,10 @@ public class OrganicCat extends VirtualOrganicPet implements OrganicPet {
     }
 
     public int getThirst() {
+        int thirst = 23;
         return thirst;
     }
 
-    public void setThirst(int thirst) {
-        this.thirst = thirst;
-    }
 
     public int getHunger() {
         return hunger;

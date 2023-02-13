@@ -1,10 +1,10 @@
 package pet_amok;
 
-public abstract class VirtualOrganicPet extends VirtualPet implements OrganicPet{
+public class VirtualOrganicPet extends VirtualPet implements OrganicPet{
     private String name;
-    private int hunger;
-    private int thirst;
-    private int waste;
+    private final int hunger;
+    protected int thirst;
+
 
 
 
@@ -13,7 +13,7 @@ public abstract class VirtualOrganicPet extends VirtualPet implements OrganicPet
 
         this.thirst = thirst;
         this.hunger = hunger;
-        this.waste = waste;
+
 
 
     }
@@ -42,6 +42,7 @@ public abstract class VirtualOrganicPet extends VirtualPet implements OrganicPet
     @Override
     public void water() {
 
+
     }
 
     @Override
@@ -58,6 +59,9 @@ public abstract class VirtualOrganicPet extends VirtualPet implements OrganicPet
     }
 
 
+    public int getPetHunger() {
+        return hunger;
+    }
 }
 
 

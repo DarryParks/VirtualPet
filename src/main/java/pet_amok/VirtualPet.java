@@ -1,15 +1,17 @@
 package pet_amok;
 
 public class VirtualPet {
-    private String name;
+    private final String name;
     private int happiness;
     private int health;
+
 
 
     public VirtualPet(String name, int happiness, int health) {
         this.name = name;
         this.happiness = happiness;
         this.health = health;
+
 
 
     }

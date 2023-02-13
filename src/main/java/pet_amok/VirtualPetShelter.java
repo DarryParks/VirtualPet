@@ -103,7 +103,7 @@ public class VirtualPetShelter {
             pet.getValue().play();
         }
     }
-    public void feedPets(){
+    public void feedPets(VirtualPet pets){
         for (Entry<String, VirtualOrganicPet> pet : myOrganicShelter.entrySet()){
             pet.getValue().feed();
         }
@@ -195,7 +195,25 @@ public class VirtualPetShelter {
         }
     }
 
+    public void tickAllPets(VirtualPet pets3) {
+    }
 
-    public void tickAllPets(VirtualRoboticPet pets2) {
+    public void oilAllRobots() {
+    }
+
+    public void walkDogs() {
+    }
+
+    public void emptyLitterBox() {
+    }
+
+    public void cleanAllCages() {
+    }
+
+    public boolean hasPets() {
+        return false;
+    }
+
+    public void waterAllPets() {
     }
 }
