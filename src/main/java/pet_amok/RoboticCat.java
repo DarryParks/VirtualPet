@@ -2,8 +2,8 @@ package pet_amok;
 
 public class RoboticCat extends VirtualRoboticPet implements RoboticPet {
 
-    private final int batteryLife;
-    private final int oil;
+    protected int batteryLife;
+    protected int oil;
 
 
     public RoboticCat(String name, int happiness, int health, int oil, int batteryLife) {
@@ -15,7 +15,8 @@ public class RoboticCat extends VirtualRoboticPet implements RoboticPet {
 
     @Override
     public void oil() {
-        setBatteryLife(getBatteryLevel() + 5);
+        batteryLife -= 5;
+        oil -= 5;
     }
 
     public int getBatteryLevel() {
@@ -33,16 +34,13 @@ public class RoboticCat extends VirtualRoboticPet implements RoboticPet {
 
     @Override
     public void tick() {
-        setRoboticPetHappiness(getRoboticPetHappiness() - 1);
-        setBatteryLife(getBatteryLife() - 1);
+        batteryLife -= 5;
+        oil -= 5;
 
-        if (getBatteryLife() <= 10 || getBatteryLife() <= 5) {
-            setRoboticPetHealth(getRoboticPetHealth() - 1);
-        }
     }
 
     public int getBatteryLife() {
-        return batteryLife;
+        return batteryLife = 30;
     }
 }
 

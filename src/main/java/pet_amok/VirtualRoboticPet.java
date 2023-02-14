@@ -1,21 +1,21 @@
 package pet_amok;
 
 public class VirtualRoboticPet extends VirtualPet{
-    private String roboticPetName;
-    private int roboticPetHappiness;
-    private int roboticPetHealth;
-    private final int petOilLevel;
-    private final int BatteryLevel;
+    protected String roboticPetName;
+   protected int roboticPetHappiness;
+   protected int roboticPetHealth;
+   private int oil;
+   private int batteryLife;
 
 
 
-    public VirtualRoboticPet(String name, int happiness, int health, int oilLevel, int BatteryLevel){
+    public VirtualRoboticPet(String name, int happiness, int health, int oilLevel, int batteryLife){
         super(name,happiness, health);
         this.roboticPetName = name;
         this.roboticPetHappiness = happiness;
         this.roboticPetHealth = health;
-        this.petOilLevel = oilLevel;
-        this.BatteryLevel = BatteryLevel;
+        this.oil = oil;
+        this.batteryLife = batteryLife;
     }
 
     // Getters
@@ -31,8 +31,9 @@ public class VirtualRoboticPet extends VirtualPet{
         return roboticPetHappiness;
     }
 
-    public int getPetOilLevel() {
-        return petOilLevel;
+    public void oil() {
+
+        oil -= 5;
     }
 
     public int getRoboticPetHealth(){
@@ -40,7 +41,7 @@ public class VirtualRoboticPet extends VirtualPet{
     }
 
     public int getBatteryLevel() {
-        return BatteryLevel;
+        return batteryLife;
     }
 
 
@@ -64,7 +65,7 @@ public class VirtualRoboticPet extends VirtualPet{
     public void play(){
         roboticPetHappiness += 10;
 
-        if(petOilLevel<= 20){
+        if(oil<= 20){
             System.out.println("Please oil Robotic Pet before Health declines");
         }
     }

@@ -1,9 +1,9 @@
 package pet_amok;
 
 public class VirtualPet {
-    private final String name;
-    private int happiness;
-    private int health;
+    protected final String name;
+    protected int happiness;
+    protected int health;
 
 
 

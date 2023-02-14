@@ -1,8 +1,7 @@
 package pet_amok;
 
 public class VirtualOrganicPet extends VirtualPet implements OrganicPet{
-    private String name;
-    private final int hunger;
+    protected int hunger;
     protected int thirst;
 
 
@@ -41,7 +40,9 @@ public class VirtualOrganicPet extends VirtualPet implements OrganicPet{
 
     @Override
     public void water() {
-
+        happiness += 5;
+        hunger -= 2;
+        health += 5;
 
     }
 
@@ -52,10 +53,15 @@ public class VirtualOrganicPet extends VirtualPet implements OrganicPet{
 
     @Override
     public void walk() {
-
+        happiness += 5;
+        hunger -= 2;
+        health += 5;
     }
 
     public void tick() {
+        happiness -= 5;
+        hunger += 2;
+        health -= 5;
     }
 
 

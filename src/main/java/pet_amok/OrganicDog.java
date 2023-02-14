@@ -1,9 +1,9 @@
 package pet_amok;
 
 public class OrganicDog extends VirtualOrganicPet implements OrganicPet {
-    private int hunger;
-    private int thirst;
-    private int waste;
+   protected int hunger;
+   protected int thirst;
+   protected int waste;
 
     public OrganicDog(String name, int happiness, int health, int hunger, int thirst, int waste) {
         super(name, happiness, health, hunger, thirst, waste);
