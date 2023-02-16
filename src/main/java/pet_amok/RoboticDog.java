@@ -19,9 +19,8 @@ public class RoboticDog extends VirtualRoboticPet implements RoboticPet {
 
     }
 
-    public void oil() {
-        oil -= 1;
-        batteryLife -=5;
+    public int oil() {
+       return oil;
     }
 
 }

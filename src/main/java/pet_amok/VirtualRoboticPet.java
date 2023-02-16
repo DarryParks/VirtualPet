@@ -1,9 +1,9 @@
 package pet_amok;
 
 public class VirtualRoboticPet extends VirtualPet{
-    protected String roboticPetName;
-   protected int roboticPetHappiness;
-   protected int roboticPetHealth;
+    protected String name;
+   protected int happiness;
+   protected int health;
    private int oil;
    private int batteryLife;
 
@@ -11,59 +11,40 @@ public class VirtualRoboticPet extends VirtualPet{
 
     public VirtualRoboticPet(String name, int happiness, int health, int oilLevel, int batteryLife){
         super(name,happiness, health);
-        this.roboticPetName = name;
-        this.roboticPetHappiness = happiness;
-        this.roboticPetHealth = health;
+        this.name = name;
+        this.happiness = happiness;
+        this.health = health;
         this.oil = oil;
         this.batteryLife = batteryLife;
     }
 
     // Getters
-    public String getRoboticPetName(){
-        return roboticPetName;
+    public String name(){
+        return name;
     }
 
     public String getRoboticPetType(){
         return "Robotic";
     }
 
-    public int getRoboticPetHappiness(){
-        return roboticPetHappiness;
+    public int happiness(){
+        return happiness;
     }
 
-    public void oil() {
-
-        oil -= 5;
+    public int oil() {
+        return oil;
     }
 
     public int getRoboticPetHealth(){
-        return roboticPetHealth;
+        return health;
     }
 
-    public int getBatteryLevel() {
+    public int batteryLife() {
         return batteryLife;
     }
 
-
-
-    // Setters
-    public void setRoboticPetName(String roboticPetName){
-        this.roboticPetName = roboticPetName;
-
-    }
-
-    public void setRoboticPetHappiness(int roboticPetHappiness){
-        this.roboticPetHappiness = roboticPetHappiness;
-
-    }
-
-    public void setRoboticPetHealth(int roboticPetHealth){
-        this.roboticPetHealth = roboticPetHealth;
-
-    }
-
     public void play(){
-        roboticPetHappiness += 10;
+        happiness += 10;
 
         if(oil<= 20){
             System.out.println("Please oil Robotic Pet before Health declines");
@@ -71,8 +52,9 @@ public class VirtualRoboticPet extends VirtualPet{
     }
 
     public void tick(){
-        roboticPetHappiness -= 20;
-        roboticPetHealth -= 10;
+        happiness -= 20;
+        health -= 10;
+        
 
     }
 

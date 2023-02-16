@@ -1,6 +1,6 @@
 package pet_amok;
 
-public class VirtualOrganicPet extends VirtualPet implements OrganicPet{
+ public class VirtualOrganicPet extends VirtualPet implements OrganicPet{
     protected int hunger;
     protected int thirst;
 
@@ -38,13 +38,19 @@ public class VirtualOrganicPet extends VirtualPet implements OrganicPet{
         super.feed();
     }
 
-    @Override
-    public void water() {
-        happiness += 5;
-        hunger -= 2;
-        health += 5;
+     @Override
+     public void thirst() {
 
-    }
+     }
+
+////    @Override
+////    public void water() {
+////        happiness += 5;
+////        hunger -= 2;
+////        health += 5;
+////        thirst -=5;
+//
+//    }
 
     @Override
     public void play() {

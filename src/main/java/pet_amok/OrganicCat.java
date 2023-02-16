@@ -15,6 +15,10 @@ public class OrganicCat extends VirtualOrganicPet implements OrganicPet {
 
     @Override
     public void walk() {
+        happiness += 5;
+        health += 5;
+        thirst +=5;
+        hunger -=5;
 
     }
 
@@ -31,6 +35,13 @@ public class OrganicCat extends VirtualOrganicPet implements OrganicPet {
         setHunger(getHunger() + 5);
     }
 
+    @Override
+    public void thirst() {
+        happiness += 5;
+        health += 5;
+        hunger -=5;
+    }
+
     public void water() {
         setThirst(getThirst() + 5);
     }
@@ -40,19 +51,17 @@ public class OrganicCat extends VirtualOrganicPet implements OrganicPet {
     }
 
     public void emptyLitterBox() {
-        setWaste(getWaste() - 5);
+        happiness += 5;
+        health += 5;
+        thirst +=5;
+        hunger -=5;
     }
 
     public int getWaste() {
         return waste;
     }
 
-    public void setWaste(int waste) {
-        this.waste = waste;
-    }
-
     public int getThirst() {
-        int thirst = 23;
         return thirst;
     }
 

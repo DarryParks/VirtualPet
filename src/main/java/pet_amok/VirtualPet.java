@@ -1,5 +1,7 @@
 package pet_amok;
 
+import java.util.Map;
+
 public class VirtualPet {
     protected final String name;
     protected int happiness;
@@ -76,6 +78,11 @@ public class VirtualPet {
         health -= 5;
 
 
-    }}
+    }
+
+    public Map.Entry<String, VirtualPet>[] entrySet() {
+        return new Map.Entry[0];
+    }
+}
 
 

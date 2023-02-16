@@ -13,23 +13,14 @@ public class RoboticCat extends VirtualRoboticPet implements RoboticPet {
 
     }
 
-    @Override
-    public void oil() {
-        batteryLife -= 5;
-        oil -= 5;
+
+    public int oil() {
+        return  oil;
     }
 
-    public int getBatteryLevel() {
+    public int batteryLife() {
 
         return batteryLife;
-    }
-
-    public void setBatteryLife(int batteryLife) {
-
-    }
-
-    public void setOil(int oil) {
-
     }
 
     @Override
@@ -37,10 +28,6 @@ public class RoboticCat extends VirtualRoboticPet implements RoboticPet {
         batteryLife -= 5;
         oil -= 5;
 
-    }
-
-    public int getBatteryLife() {
-        return batteryLife = 30;
     }
 }
 

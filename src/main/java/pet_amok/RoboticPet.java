@@ -4,5 +4,5 @@ public interface RoboticPet {
 
     void tick();
 
-    void oil();
+    int oil();
 }

@@ -4,8 +4,7 @@ public interface OrganicPet {
     void walk();
 
     void feed();
-
-    void water();
+    void thirst();
 
 
 }
